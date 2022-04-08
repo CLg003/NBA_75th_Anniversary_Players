@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Player = () => {
+const Player = ({name, height}) => {
 
     return (
         <li className="player-name">
             <img src="" alt="Team logo"/>
-            <p>Player name</p>
+            <p>{name} {height}</p>
         </li>
     );
 
