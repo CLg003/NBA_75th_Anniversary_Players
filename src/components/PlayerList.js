@@ -4,8 +4,8 @@ import Player from './Player';
 const PlayerList = () => {
 
     return (
-        <ul>
-            <p>List of players here</p>
+        <ul id="player-list">
+            <h2>The NBA "75"</h2>
             <Player />
         </ul>
     );

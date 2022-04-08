@@ -8,11 +8,12 @@ const Nba75 = () => {
     
 
     return (
-        <>
+        <div id="nba-75">
+            <h1>NBA75</h1>
             <Intro />
             <ListFilter />
             <PlayerList />
-        </>
+        </div>
     );
 }
 

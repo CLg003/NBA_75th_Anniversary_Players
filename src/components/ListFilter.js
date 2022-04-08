@@ -3,7 +3,7 @@ import React from 'react';
 const ListFilter = () => {
 
     return (
-        <p>List filters and search bar here</p>
+        <p>Filter by TEAM / ALL PLAYERS / Search</p>
     );
 
 }
