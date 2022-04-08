@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListFilter = () => {
+const ListFilter = ({players}) => {
 
     return (
         <p>Filter by TEAM / ALL PLAYERS / Search</p>

@@ -1,7 +1,11 @@
 import React from 'react';
 import Player from './Player';
 
-const PlayerList = () => {
+const PlayerList = ({players}) => {
+
+    // const playerNodes = players.map(player => {
+    //     return <Player   />
+    // })
 
     return (
         <ul id="player-list">
