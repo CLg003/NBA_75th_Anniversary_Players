@@ -7,13 +7,33 @@ import PlayerList from '../components/PlayerList';
 const Nba75 = () => {
 
     // DUE TO 60 REQUESTS PER MINUTE MAX, NOW REDUCED TO NBA25 PLAYER LIST:
-    const playersToFetch = ["Kareem Abdul-Jabbar", 
+    const playersToFetch = [
+        "Kareem Abdul-Jabbar", 
     "Ray Allen", 
     "Giannis Antetokounmpo", 
     "Charles Barkley", 
     "Larry Bird", 
     "Kobe Bryant", 
-    "Wilt Chamberlain", "Stephen Curry", "Patrick Ewing", "James Harden", "Allen Iverson", "LeBron James", "Magic Johnson", "Michael Jordan", "Damian Lillard", "Jerry Lucas", "Reggie Miller", "Steve Nash", "Dirk Nowitzki", "Hakeem Olajuwon", "Shaquille O'Neal", "Chris Paul", "Scottie Pippen", "Dennis Rodman", "Russell Westbrook"];
+    "Stephen Curry",
+    "Kevin Durant",  
+    "Patrick Ewing",
+    "Walt Frazier",  
+    "James Harden", 
+    "Allen Iverson", 
+    "LeBron James", 
+    "Magic Johnson", 
+    "Michael Jordan", 
+    "Damian Lillard", 
+    "Reggie Miller", 
+    "Steve Nash", 
+    "Dirk Nowitzki", 
+    "Hakeem Olajuwon", 
+    "Shaquille O'Neal", 
+    "Chris Paul", 
+    "Scottie Pippen",
+    "Dennis Rodman",
+    "Russell Westbrook"
+    ];
 
     // SHORT LIST TO USE FOR REPEATED REQUESTS WHILE WRITING CODE:
     // const playersToFetch = ["Giannis Antetokounmpo", "Kobe Bryant", "Stephen Curry", "Michael Jordan", "Russell Westbrook"];
