@@ -1,8 +1,9 @@
 import './App.css';
+import Nba75 from './containers/Nba75';
 
 function App() {
   return (
-    <p>Hello</p>
+    <Nba75 />
   );
 }
 
