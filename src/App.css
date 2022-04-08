@@ -1,5 +1,10 @@
 #nba-75 {
+  width: 90%;
+  margin: auto;
+}
 
+h1 {
+  text-align: center;
 }
 
 #introduction {
@@ -14,4 +19,54 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.player-name img {
+  padding: 20px;
+}
+
+.player-click {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-team {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.team:hover, .show-stats:hover {
+  color: blue;
+  font-weight: bold;
+}
+
+.stats {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue;
+}
+
+table, th, td {
+  border: 1px solid black;
+  /* border-collapse: collapse; */
+}
+
+th, td {
+  padding: 10px;
+  background-color: white;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
 }

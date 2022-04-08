@@ -1,11 +1,18 @@
 import React from 'react';
 
-const ListFilter = ({players}) => {
+const ListFilter = ({players, handlePlayerSearch}) => {
+
+    const onChange = (event) => {
+        handlePlayerSearch(event.target.value);
+    }
 
     return (
-        <p>Filter by TEAM / ALL PLAYERS / Search</p>
+        <div id="search">
+            <p>Filter by TEAM / Search</p>
+            <label id="search-label">Search players</label>
+            <input type="text" onChange={onChange} />
+        </div>
     );
-
 }
 
 export default ListFilter;
