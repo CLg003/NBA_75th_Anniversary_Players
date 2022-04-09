@@ -22,9 +22,16 @@ const Nba75 = () => {
     const [players, setPlayers] = useState([]);
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPlayer, setSelectedPlayer] = useState(null);
+    const [teamClick, setTeamClick] = useState(false);
+    const [statsClick, setStatsClick] = useState(false);
+    const [hideClick, setHideClick] = useState(false);
 
 
     useEffect(() => {fetchPlayers()}, []);
+    useEffect(() => {setSelectedPlayer(null)}, [hideClick]);
+    useEffect(() => {setTeamClick(false)}, [selectedPlayer]);
+    useEffect(() => {setStatsClick(false)}, [selectedPlayer]);
+    useEffect(() => {setHideClick(false)}, [selectedPlayer]);
 
     const fetchPlayers = () => {
         const playerRequests = playersToFetch.map(player => {
@@ -62,6 +69,19 @@ const Nba75 = () => {
         setSelectedPlayer(playerToSelect);
     }
 
+    const onTeamClick = function() {
+        const newTeamClickStatus = true;
+        setTeamClick(newTeamClickStatus);
+    }
+
+    const onStatsClick = function() { 
+        statsClick ? setStatsClick(false) : setStatsClick(true)
+    }
+
+    const onHideClick = function() { 
+        hideClick ? setHideClick(false) : setHideClick(true)
+    }
+
     return (
         <div id="nba-75">
             <header>
@@ -72,7 +92,7 @@ const Nba75 = () => {
             { selectedPlayer ? <><p>{selectedPlayer.data[0].first_name}</p> <p>{selectedPlayer.data[0].id}</p></> : null} 
             <Intro />
             <ListFilter players={filteredPlayers} handlePlayerSearch={handlePlayerSearch} handleTeamSearch={handleTeamSearch}/>
-            <PlayerList players={filteredPlayers} onPlayerClick={onPlayerClick} selectedPlayer={selectedPlayer}/>
+            <PlayerList players={filteredPlayers} onPlayerClick={onPlayerClick} selectedPlayer={selectedPlayer} onTeamClick={onTeamClick} teamClick={teamClick}onStatsClick={onStatsClick} statsClick={statsClick} onHideClick={onHideClick} hideClick={hideClick}/>
 
         </div>
     );

@@ -1,12 +1,21 @@
 import React from "react";
+import TeamDetail from "./TeamDetail";
 
-const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamLogo}) => {
+const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamLogo, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick}) => {
 
-    let teamClick = false;
-
-    const handleTeamClick = function(teamClick) {
+    const handleTeamClick = function() {
         console.log("Team clicked")
-        teamClick = true;
+        onTeamClick();
+    }
+
+    const handleStatsClick = function() {
+        console.log("Stats clicked")
+        onStatsClick();
+    }
+
+    const handleHideClick = function() {
+        console.log("Hide clicked")
+        onHideClick();
     }
 
     return (
@@ -18,24 +27,14 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                     { position ? <p>Position: {position}</p> : null}
                     { heightFeet ? <p>Height: {heightFeet}'{heightInches}"</p> : null}
                     { weight ? <p>Weight: {weight}lbs</p> : null}
-                    <p className="show-stats">View player stats</p>
-                    <p className="show-stats">Hide player stats</p>
+                    { statsClick ?
+                    <p className="show-stats" onClick={handleStatsClick}>Hide player stats</p> :
+                    <p className="show-stats" onClick={handleStatsClick}>View player stats</p> }
                 </div>
-                    <TeamDetail team={team} conference={conference} division={division} teamLogo={teamLogo}/>
-                { teamClick ? <p>HELLO</p> : null }
-                {/* <div className="team-box">
-                    <div className="team-detail">
-                    <h3>{team}</h3>
-                    <p>{conference}ern conference</p>
-                    <p>{division} division</p>
-                    </div>
-                </div> :
-                null } */}
-                { team === "Los Angeles Lakers" ? 
-                <img className="team-logo-big" src={teamLogo} alt="Team logo" height="200px"/> : 
-                <img className="team-logo-big" src={teamLogo} alt="Team logo" height="250px"/>}
+                { teamClick ? 
+                <TeamDetail team={team} conference={conference} division={division} teamLogo={teamLogo}/> : null }
             </div>
-            {/* TO SHOW onStatsClick */}
+            { statsClick ? 
             <div className="stats">
                 <h3>Season Averages - 2021/22 or last season played</h3>
                 <table>
@@ -65,8 +64,8 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                     </tbody>
                 </table>
                 <p>Check out {firstName} {lastName}'s full NBA 75 profile on <a href="https:ww.nba.com/75/team" target="_blank">NBA.com</a></p>
-            </div>
-            <p className="hide-player-detail">Hide player details</p>
+            </div> : null }
+            <p className="hide-player-detail" onClick={handleHideClick}>Hide player details</p>
         </div>
     );
 

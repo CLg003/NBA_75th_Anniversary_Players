@@ -1,7 +1,7 @@
 import React from 'react';
 import Player from './Player';
 
-const PlayerList = ({players, onPlayerClick, selectedPlayer}) => {
+const PlayerList = ({players, onPlayerClick, selectedPlayer, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick}) => {
 
     const playerNodes = players.map((player, index) => {
         return (
@@ -23,6 +23,12 @@ const PlayerList = ({players, onPlayerClick, selectedPlayer}) => {
             onPlayerClick={onPlayerClick} 
             selectedPlayer={selectedPlayer} 
             players={players}
+            onTeamClick={onTeamClick} 
+            teamClick={teamClick} 
+            onStatsClick={onStatsClick} 
+            statsClick={statsClick} 
+            onHideClick={onHideClick} 
+            hideClick={hideClick}
             />
         );
     });
