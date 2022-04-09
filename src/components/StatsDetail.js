@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StatsDetail = ({key, playerId, selectedPlayerId, firstName, lastName, season, gamesPlayed, minsPerGame, pointsPerGame, reboundsPerGame, assistsPerGame, stealsPerGame, blocksPerGame, foulsPerGame}) => {
+const StatsDetail = ({playerId, selectedPlayerId, firstName, lastName, season, gamesPlayed, minsPerGame, pointsPerGame, reboundsPerGame, assistsPerGame, stealsPerGame, blocksPerGame, foulsPerGame}) => {
     if (playerId === selectedPlayerId) {
         return (
             <div className="stats">
