@@ -76,7 +76,7 @@ h1 {
 #arrow {
   font-size: 30px;
   padding-left: 10px;
-  padding-top: 10px;
+  vertical-align: sub;
 }
 
 .team:hover, .show-stats:hover {
