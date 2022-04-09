@@ -1,27 +1,31 @@
 import React from "react";
+import teamLogos from '../images/teams';
 
 const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit}) => {
 
-    const teamLogo = teamInit + ".png"
+    const teamLogo = teamLogos.indexOf(`${teamInit}.png`)
 
     return (
-        <div className="player-click">
+        <div className="player-focus">
             <div className="player-team">
-                <div className="player-detail">
+                <div className="player-box">
                     <h3>{firstName} {lastName}</h3>
                     <p>Team: <span className="team">{team}</span></p>
                     { position ? <p>Position: {position}</p> : null}
                     { heightFeet ? <p>Height: {heightFeet}'{heightInches}"</p> : null}
                     { weight ? <p>Weight: {weight}lbs</p> : null}
-                    <p className="show-stats">Show last season stats</p>
+                    <p className="show-stats">View player stats</p>
+                    <p className="show-stats">Hide player stats</p>
                 </div>
                 {/* TO SHOW onTeamClick */}
-                <div className="team-detail">
+                <div className="team-box">
+                    <div className="team-detail">
                     <h3>{team}</h3>
                     <p>{conference}ern conference</p>
                     <p>{division} division</p>
+                    </div>
                 </div>
-                <img src={teamLogo} alt="Team logo"/>
+                <img className="team-logo-big" src={teamLogo} alt="Team logo" height="250px"/>
             </div>
             {/* TO SHOW onStatsClick */}
             <div className="stats">
@@ -54,6 +58,7 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                 </table>
                 <p>Read {firstName} {lastName}'s full NBA 75 profile at <a href="https://www.nba.com/75/team" target="_blank">NBA.com</a></p>
             </div>
+            <p>Hide player details</p>
         </div>
     );
 
