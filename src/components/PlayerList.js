@@ -1,7 +1,7 @@
 import React from 'react';
 import Player from './Player';
 
-const PlayerList = ({players, onPlayerClick}) => {
+const PlayerList = ({players, onPlayerClick, selectedPlayer}) => {
 
     const playerNodes = players.map((player, index) => {
         return (
@@ -20,7 +20,9 @@ const PlayerList = ({players, onPlayerClick}) => {
             conference={player.data[0].team.conference} 
             division={player.data[0].team.division}
             teamInit={player.data[0].team.abbreviation} 
-            onPlayerClick={onPlayerClick}
+            onPlayerClick={onPlayerClick} 
+            selectedPlayer={selectedPlayer} 
+            players={players}
             />
         );
     });

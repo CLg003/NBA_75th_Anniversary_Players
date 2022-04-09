@@ -31,7 +31,8 @@ import TOR from "../images/teams/TOR.png";
 import UTA from "../images/teams/UTA.png";
 import WAS from "../images/teams/WAS.png";
 
-const Player = ({index, listPosition, firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit, onPlayerClick}) => {
+
+const Player = ({index, id, listPosition, firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit, onPlayerClick, selectedPlayer, players}) => {
 
     const teamLogoImages = [ATL, BOS, BKN, CHA, CHI, CLE, DAL, DEN, DET, GSW, HOU, IND, LAC, LAL, MEM, MIA, MIL, MIN, NOP, NYK, OKC, ORL, PHI, PHX, POR, SAC, SAS, TOR, UTA, WAS];
    
@@ -39,16 +40,11 @@ const Player = ({index, listPosition, firstName, lastName, position, heightFeet,
         return image.includes(teamInit);
     });
 
-    const handleClick = function(event) {
-        onPlayerClick(event.target.value);
+    const handleClick = function() {
+        onPlayerClick(index);
         console.log(`Clicked on ${firstName} ${lastName}`);
+        console.log({index});
     }
-
-    // const handleClick = function() {
-  //   onMunroClick(munro);
-  //   // console.log(`Clicked on ${munro.name}`);
-  // }
-
 
     return (
         <>
@@ -58,11 +54,13 @@ const Player = ({index, listPosition, firstName, lastName, position, heightFeet,
                 <img className="team-logo-small" src={teamLogo} alt="Team logo" height="30px"/> : 
                 <img className="team-logo-small" src={teamLogo} alt="Team logo" height="40px"/>}
                 <p value={index} onClick={handleClick}>{firstName} {lastName}</p>
+                {/* {selectedPlayer ? <h2>SELECTED PLAYER: {selectedPlayer.data[0].id}</h2> : null} */}
             </li>
-            {/* + onPlayerClick={onPlayerClick} */}
-            {/* { selectedPlayer ? <PlayerDetail player={selectedPlayer}/> : null} */}
-            {/* <PlayerDetail player={selectedPlayer}/> */}
+
+            { selectedPlayer === players[index] ?             
             <PlayerDetail 
+            key={index}
+            id={id}
             firstName={firstName} 
             lastName={lastName} 
             position={position} 
@@ -73,7 +71,7 @@ const Player = ({index, listPosition, firstName, lastName, position, heightFeet,
             conference={conference} 
             division={division} 
             teamLogo={teamLogo} 
-            />
+            /> : null }
         </>
     );
 

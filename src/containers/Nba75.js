@@ -23,6 +23,21 @@ const Nba75 = () => {
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPlayer, setSelectedPlayer] = useState(null);
 
+
+    useEffect(() => {fetchPlayers()}, []);
+
+    const fetchPlayers = () => {
+        const playerRequests = playersToFetch.map(player => {
+            return fetch(`https://www.balldontlie.io/api/v1/players?search=${player}`)
+            .then(response => response.json());
+        });
+        Promise.all(playerRequests)
+        .then(data => {
+            setPlayers(data);
+            setFilteredPlayers(data);
+        });
+    }
+
     const handlePlayerSearch = (search) => {
         const playersAfterSearch = players.filter(player => {
             return (
@@ -42,20 +57,6 @@ const Nba75 = () => {
         setFilteredPlayers(playersAfterSearch);
     }
 
-    useEffect(() => {fetchPlayers()}, []);
-
-    const fetchPlayers = () => {
-        const playerRequests = playersToFetch.map(player => {
-            return fetch(`https://www.balldontlie.io/api/v1/players?search=${player}`)
-            .then(response => response.json());
-        });
-        Promise.all(playerRequests)
-        .then(data => {
-            setPlayers(data);
-            setFilteredPlayers(data);
-        });
-    }
-
     const onPlayerClick = function(index) {
         const playerToSelect = players[index];
         setSelectedPlayer(playerToSelect);
@@ -68,13 +69,11 @@ const Nba75 = () => {
                 <h1>NBA 75</h1>
                 <img id="nba-logo" src={nbaLogo} alt="NBA logo" height="200px"/>
             </header>
-            <p>{selectedPlayer}</p>
+            { selectedPlayer ? <><p>{selectedPlayer.data[0].first_name}</p> <p>{selectedPlayer.data[0].id}</p></> : null} 
             <Intro />
             <ListFilter players={filteredPlayers} handlePlayerSearch={handlePlayerSearch} handleTeamSearch={handleTeamSearch}/>
-            <PlayerList players={filteredPlayers} onPlayerClick={onPlayerClick}/>
-            {/* + onPlayerClick={onPlayerClick} */}
-            {/* { selectedPlayer ? <PlayerDetail player={selectedPlayer}/> : null} */}
-            {/* <PlayerDetail player={selectedPlayer}/> */}
+            <PlayerList players={filteredPlayers} onPlayerClick={onPlayerClick} selectedPlayer={selectedPlayer}/>
+
         </div>
     );
 

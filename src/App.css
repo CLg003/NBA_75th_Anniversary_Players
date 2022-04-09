@@ -73,6 +73,12 @@ h1 {
   justify-content: space-evenly;
 }
 
+#arrow {
+  font-size: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
 .team:hover, .show-stats:hover {
   color: blue;
   font-weight: bold;
