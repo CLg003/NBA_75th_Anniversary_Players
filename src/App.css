@@ -104,6 +104,20 @@ th, td {
   background-color: white;
 }
 
+.th-games-played {
+  display: flex;
+  flex-flow: wrap row;
+}
+
+.stats-key {
+  display: flex;
+  flex-flow: wrap row;
+  width: 70%;
+  max-width: 530px;
+  margin: auto;
+  font-size: smaller;
+}
+
 a {
   color: black;
   font-weight: bold;

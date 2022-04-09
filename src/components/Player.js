@@ -32,7 +32,7 @@ import UTA from "../images/teams/UTA.png";
 import WAS from "../images/teams/WAS.png";
 
 
-const Player = ({index, id, listPosition, firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit, onPlayerClick, selectedPlayer, players, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick}) => {
+const Player = ({index, id, listPosition, firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit, onPlayerClick, selectedPlayer, players, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick, stats}) => {
 
     const teamLogoImages = [ATL, BOS, BKN, CHA, CHI, CLE, DAL, DEN, DET, GSW, HOU, IND, LAC, LAL, MEM, MIA, MIL, MIN, NOP, NYK, OKC, ORL, PHI, PHX, POR, SAC, SAS, TOR, UTA, WAS];
    
@@ -54,7 +54,6 @@ const Player = ({index, id, listPosition, firstName, lastName, position, heightF
                 <img className="team-logo-small" src={teamLogo} alt="Team logo" height="30px"/> : 
                 <img className="team-logo-small" src={teamLogo} alt="Team logo" height="40px"/>}
                 <p value={index} onClick={handleClick}>{firstName} {lastName}</p>
-                {/* {selectedPlayer ? <h2>SELECTED PLAYER: {selectedPlayer.data[0].id}</h2> : null} */}
             </li>
 
             { !hideClick && selectedPlayer === players[index] ?             
@@ -76,8 +75,13 @@ const Player = ({index, id, listPosition, firstName, lastName, position, heightF
             onStatsClick={onStatsClick} 
             statsClick={statsClick} 
             onHideClick={onHideClick} 
-            hideClick={hideClick}
+            hideClick={hideClick} 
+            stats={stats} 
+            players={players} 
+            selectedPlayer={selectedPlayer}
+            index={index}
             /> : null }
+            
         </>
     );
 

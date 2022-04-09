@@ -1,7 +1,49 @@
 import React from "react";
 import TeamDetail from "./TeamDetail";
+import StatsDetail from "./StatsDetail";
 
-const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamLogo, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick}) => {
+const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamLogo, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick, stats, selectedPlayer, players, index}) => {
+
+    
+    // const statNodes = stats.map((stat, index) => {
+    //     return (
+    //         <StatsDetail 
+    //         key={index}
+    //         firstName={firstName} 
+    //         lastName={lastName} 
+    //         season={stat.data[0].season} 
+    //         gamesPlayed={stat.data[0].games_played} 
+    //         minsPerGame={stat.data[0].min} 
+    //         pointsPerGame={stat.data[0].pts} 
+    //         reboundsPerGame={stat.data[0].reb} 
+    //         assistsPerGame={stat.data[0].ast} 
+    //         stealsPerGame={stat.data[0].stl} 
+    //         blocksPerGame={stat.data[0].blk} 
+    //         foulsPerGame={stat.data[0].pf}
+    //         />
+    //     );
+    // });
+
+    const statNodes = stats.map((stat, index) => {
+        return (
+            <StatsDetail 
+            key={index}
+            playerId={stat.data[0].player_id}
+            selectedPlayerId={selectedPlayer.data[0].id}
+            firstName={firstName} 
+            lastName={lastName}
+            season={stat.data[0].season} 
+            gamesPlayed={stat.data[0].games_played} 
+            minsPerGame={stat.data[0].min} 
+            pointsPerGame={stat.data[0].pts} 
+            reboundsPerGame={stat.data[0].reb} 
+            assistsPerGame={stat.data[0].ast} 
+            stealsPerGame={stat.data[0].stl} 
+            blocksPerGame={stat.data[0].blk} 
+            foulsPerGame={stat.data[0].pf}
+            />
+        );
+    });
 
     const handleTeamClick = function() {
         console.log("Team clicked")
@@ -32,39 +74,9 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                     <p className="show-stats" onClick={handleStatsClick}>View player stats</p> }
                 </div>
                 { teamClick ? 
-                <TeamDetail team={team} conference={conference} division={division} teamLogo={teamLogo}/> : null }
+                <TeamDetail team={team} conference={conference} division={division} teamLogo={teamLogo} /> : null }
             </div>
-            { statsClick ? 
-            <div className="stats">
-                <h3>Season Averages - 2021/22 or last season played</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                            <th>Stats</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                            <td>3.7</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>Check out {firstName} {lastName}'s full NBA 75 profile on <a href="https:ww.nba.com/75/team" target="_blank">NBA.com</a></p>
-            </div> : null }
+            { statsClick && selectedPlayer === players[index] ? <>{statNodes}</> : null }
             <p className="hide-player-detail" onClick={handleHideClick}>Hide player details</p>
         </div>
     );

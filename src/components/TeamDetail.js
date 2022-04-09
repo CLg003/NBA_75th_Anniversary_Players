@@ -2,7 +2,7 @@ import React from "react";
 // import PlayerDetail from "./PlayerDetail";
 // import teamLogo from PlayerDetail;
 
-const TeamDetail = ({team, conference, division, teamLogo}) => {
+const TeamDetail = ({team, conference, division, teamLogo, statsClick}) => {
 
     return (
         <>
