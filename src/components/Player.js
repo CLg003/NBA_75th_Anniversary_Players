@@ -4,12 +4,17 @@ import teamLogo from "../images/teams/LAL.png";
 
 const Player = ({listPosition, firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit}) => {
 
+    // const teamLogos = require.context('../images/teams');
+    // const teamLogoIndex = teamLogos.indexOf(`${teamInit}.png`);
+    // const teamLogo = teamLogos[teamLogoIndex];
+
+
     // const [ATL, BKS, BKN, CHA, CHI, CLE, DAL, DEN, DET, GSW, HOU, IND, LAC, LAL, MEM, MIA, MIL, MIN, NOP, NYK, OKC, ORL, PHI, PHX, POR, SAC, SAS, TOR, UTA, WAS] = teamLogos;
 
     // const teamLogo = teamLogos.indexOf(teamInit)
 
     // const teamLogo = "./images/teams/" + teamInit + ".png";
-    const teamLogo = "./images/teams/LAL.png";
+    // const teamLogo = "../images/teams/LAL.png";
     // const teamLogo = teamLogos[indexOf(teamInit)];
 
     return (

@@ -1,9 +1,8 @@
 import React from "react";
-import teamLogos from '../images/teams';
+import teamLogo from "../images/teams/LAL.png";
+
 
 const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit}) => {
-
-    const teamLogo = teamLogos.indexOf(`${teamInit}.png`)
 
     return (
         <div className="player-focus">
