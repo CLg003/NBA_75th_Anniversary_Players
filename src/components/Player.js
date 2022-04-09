@@ -50,9 +50,11 @@ const Player = ({index, id, listPosition, firstName, lastName, position, heightF
         <>
             <li className="player-name">
                 <h3>{listPosition}</h3>
-                { team === "Los Angeles Lakers" ? 
-                <img className="team-logo-small" src={teamLogo} alt="Team logo" height="30px"/> : 
-                <img className="team-logo-small" src={teamLogo} alt="Team logo" height="40px"/>}
+                <div className="list-logo">
+                    { team === "Los Angeles Lakers" ? 
+                    <img className="team-logo-small" src={teamLogo} alt="Team logo" height="30px"/> : 
+                    <img className="team-logo-small" src={teamLogo} alt="Team logo" height="40px"/>}
+                </div>
                 <p value={index} onClick={handleClick}>{firstName} {lastName}</p>
             </li>
 

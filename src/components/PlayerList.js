@@ -37,7 +37,6 @@ const PlayerList = ({players, onPlayerClick, selectedPlayer, onTeamClick, teamCl
 
     return (
         <>
-            <h2>The NBA 75</h2>
             <ul id="player-list">
                 {playerNodes}
             </ul>

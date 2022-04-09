@@ -3,8 +3,8 @@
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1px solid grey;
-  border-radius: 20px;
+  border: 2px solid grey;
+  border-radius: 50px;
   padding: 50px;
 }
 
@@ -13,20 +13,37 @@ header {
   justify-content: space-around;
   align-items: center;
   padding-right: 100px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid grey;
 }
 
 h1 {
   text-align: center;
-  margin-right: 50px;
+  margin-right: 100px;
+  font-size: 120px;
 }
 
 #introduction {
+  border-bottom: 2px solid grey;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+}
 
+#introduction > p {
+  /* width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; */
+}
+
+#list-heading {
+  padding: 20px;
 }
 
 #search {
   display: flex;
   align-items: center;
+  flex-flow: wrap row;
 }
 
 .search-category {
@@ -41,6 +58,7 @@ h1 {
 .search-label {
   font-weight: bold;
   margin: 0 10px;
+  margin-bottom: 10px;
 }
 
 #player-list {
@@ -53,7 +71,15 @@ h1 {
   align-items: center;
 }
 
-.player-name img {
+.player-name > h3 {
+  width: 30px;
+}
+
+.list-logo {
+  width: 90px;
+}
+
+.team-logo-small {
   padding: 20px;
 }
 
@@ -62,9 +88,20 @@ h1 {
   font-weight: bold;
 }
 
+.player-selected {
+  background-color: pink;
+}
+
 .player-click {
   display: flex;
   flex-direction: column;
+}
+
+.player-focus {
+  background-color: aliceblue;
+  border: 1px solid grey;
+  border-radius: 40px;
+  padding-top: 40px;
 }
 
 .player-team {
@@ -79,8 +116,31 @@ h1 {
   vertical-align: sub;
 }
 
-.team:hover, .show-stats:hover {
+/* .show-stats {
+  text-align: center;
+} */
+
+.team, .show-stats, .hide-player-detail {
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: white;
   color: blue;
+  font-weight: bold;
+}
+
+ /* {
+  
+} */
+
+.team:hover, .show-stats:hover, .hide-player-detail:hover {
+  background-color: blue;
+  color: white;
   font-weight: bold;
 }
 
@@ -91,6 +151,7 @@ h1 {
 table {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5px;
   background-color: blue;
 }
 
@@ -115,6 +176,7 @@ th, td {
   width: 70%;
   max-width: 530px;
   margin: auto;
+  margin-bottom: 40px;
   font-size: smaller;
 }
 
@@ -130,7 +192,3 @@ a:hover {
   /* font-size: larger; */
 }
 
-.hide-player-detail:hover {
-  color: blue;
-  font-weight: bold;
-}
