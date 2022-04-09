@@ -1,8 +1,6 @@
 import React from "react";
-import teamLogo from "../images/teams/LAL.png";
 
-
-const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamInit}) => {
+const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamLogo}) => {
 
     return (
         <div className="player-focus">
@@ -24,7 +22,9 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                     <p>{division} division</p>
                     </div>
                 </div>
-                <img className="team-logo-big" src={teamLogo} alt="Team logo" height="250px"/>
+                { team === "Los Angeles Lakers" ? 
+                <img className="team-logo-big" src={teamLogo} alt="Team logo" height="200px"/> : 
+                <img className="team-logo-big" src={teamLogo} alt="Team logo" height="250px"/>}
             </div>
             {/* TO SHOW onStatsClick */}
             <div className="stats">
@@ -55,9 +55,9 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                         </tr>
                     </tbody>
                 </table>
-                <p>Read {firstName} {lastName}'s full NBA 75 profile at <a href="https://www.nba.com/75/team" target="_blank">NBA.com</a></p>
+                <p>Check out {firstName} {lastName}'s full NBA 75 profile on <a href="https://www.nba.com/75/team" target="_blank">NBA.com</a></p>
             </div>
-            <p>Hide player details</p>
+            <p className="hide-player-detail">Hide player details</p>
         </div>
     );
 

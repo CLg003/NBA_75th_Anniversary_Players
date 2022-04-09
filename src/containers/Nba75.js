@@ -21,13 +21,22 @@ const Nba75 = () => {
 
     const [players, setPlayers] = useState([]);
     const [filteredPlayers, setFilteredPlayers] = useState([]);
-    // const [selectedPlayer, setSelectedPlayer] = useState(null);
+    const [selectedPlayer, setSelectedPlayer] = useState(null);
 
     const handlePlayerSearch = (search) => {
         const playersAfterSearch = players.filter(player => {
             return (
                 player.data[0].first_name.toLowerCase().includes(search.toLowerCase()) || 
                 player.data[0].last_name.toLowerCase().includes(search.toLowerCase())
+            );
+        });
+        setFilteredPlayers(playersAfterSearch);
+    }
+
+    const handleTeamSearch = (search) => {
+        const playersAfterSearch = players.filter(player => {
+            return (
+                player.data[0].team.full_name.toLowerCase().includes(search.toLowerCase())
             );
         });
         setFilteredPlayers(playersAfterSearch);
@@ -47,9 +56,10 @@ const Nba75 = () => {
         });
     }
 
-    // const onPlayerClick = function(player) {
-    //     setSelectedPlayer(player);
-    // }
+    const onPlayerClick = function(index) {
+        const playerToSelect = players[index];
+        setSelectedPlayer(playerToSelect);
+    }
 
     return (
         <div id="nba-75">
@@ -58,9 +68,10 @@ const Nba75 = () => {
                 <h1>NBA 75</h1>
                 <img id="nba-logo" src={nbaLogo} alt="NBA logo" height="200px"/>
             </header>
+            <p>{selectedPlayer}</p>
             <Intro />
-            <ListFilter players={filteredPlayers} handlePlayerSearch={handlePlayerSearch}/>
-            <PlayerList players={filteredPlayers}/>
+            <ListFilter players={filteredPlayers} handlePlayerSearch={handlePlayerSearch} handleTeamSearch={handleTeamSearch}/>
+            <PlayerList players={filteredPlayers} onPlayerClick={onPlayerClick}/>
             {/* + onPlayerClick={onPlayerClick} */}
             {/* { selectedPlayer ? <PlayerDetail player={selectedPlayer}/> : null} */}
             {/* <PlayerDetail player={selectedPlayer}/> */}
