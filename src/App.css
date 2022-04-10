@@ -62,7 +62,10 @@ h1 {
 }
 
 #player-list {
-
+  background-color: white; /* MAYBE GRADIENT ?? */
+  border: 1px solid grey;
+  border-radius: 40px;
+  padding: 20px 40px;
 }
 
 .player-name {
@@ -98,7 +101,7 @@ h1 {
 }
 
 .player-focus {
-  background-color: aliceblue;
+  background-color: white;  /* MAYBE GRADIENT ?? */
   border: 1px solid grey;
   border-radius: 40px;
   padding-top: 40px;
