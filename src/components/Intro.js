@@ -8,7 +8,7 @@ const Intro = () => {
             <p>
                 The NBA 75th Anniversary Team, or "NBA 75", is a list of the greatest players in NBA history that was created to honour the 75th anniversary of the NBA during the 2021-22 season.
             </p>
-            <p>
+            <p id="alphabetical">
                 The complete list of players is in alphabetical order below.
             </p>
         </div>

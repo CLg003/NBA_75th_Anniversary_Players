@@ -1,6 +1,6 @@
 
 
-#surround {
+body {
   background-color: #1D4289;
   margin: 0;
   padding: 0;
@@ -55,13 +55,16 @@ h3 {
 }
 
 #introduction {
-  /* border-bottom: 2px solid grey; */
   padding: 10px 20px;
   width: 60%;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+#alphabetical {
+  font-weight: bold;
 }
 
 #list-filter {
@@ -89,13 +92,14 @@ h3 {
 
 .search-label {
   font-weight: bold;
+  font-size: 18px;
   margin: 0 10px;
   margin-bottom: 10px;
 }
 
 #player-list {
-  background-color: white; /* MAYBE GRADIENT ?? */
-  border: 1px solid grey;
+  background-color: white;
+  border: 1px solid #1D4289;
   border-radius: 40px;
   padding: 20px 40px;
 }
@@ -133,8 +137,8 @@ h3 {
 }
 
 .player-focus {
-  background-color: white;  /* MAYBE GRADIENT ?? */
-  border: 1px solid grey;
+  background-color: white;
+  border: 2px solid #1D4289;
   border-radius: 40px;
   padding-top: 40px;
 }
@@ -156,25 +160,9 @@ h3 {
   vertical-align: sub;
 }
 
-.team {
-  /* text-align: center; */
-  /* width: 200px; */
-  /* margin: auto; */
-  /* margin-top: 10px; */
-  /* margin-bottom: 20px; */
-  padding: 5px;
-  background-color: white;
-  /* color: blue; */
-  /* font-weight: bold; */
-}
-
-/* .show-stats {
-  text-align: center;
-} */
-
 .show-stats, .hide-player-detail {
   text-align: center;
-  border: 1px solid grey;
+  border: 1px solid #1D4289;
   border-radius: 5px;
   width: 200px;
   margin: auto;
@@ -208,8 +196,6 @@ table {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
-  background-color: rgb(228, 226, 226);
-  /* box-shadow: 2px 2px 5px black; */
   border-collapse: collapse;
 }
 
@@ -225,11 +211,6 @@ th, td {
 th {
   background-color: #1D4289;
   color: white;
-}
-
-.th-games-played {
-  display: flex;
-  flex-flow: wrap row;
 }
 
 .stats-key {
