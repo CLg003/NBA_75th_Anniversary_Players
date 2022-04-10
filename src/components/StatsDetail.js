@@ -32,7 +32,7 @@ const StatsDetail = ({playerId, selectedPlayerId, firstName, lastName, season, g
                     </tbody>
                 </table>
                 <p className="stats-key"><em>MPG: mins per game, PPG: points per game, RPG: rebounds per game, APG: assists per game, SPG: steals per game, BPG: blocks per game, FPG: fouls per game</em></p>
-                <p>Check out {firstName} {lastName}'s full NBA 75 profile on <a href="https:ww.nba.com/75/team" target="_blank">NBA.com</a></p>
+                <p>Check out {firstName} {lastName}'s full NBA 75 profile on <a href="https:www.nba.com/75/team" target="_blank">NBA.com</a></p>
             </div>
         );
     }

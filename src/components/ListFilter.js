@@ -11,7 +11,7 @@ const ListFilter = ({players, handlePlayerSearch, handleTeamSearch}) => {
     }
 
     return (
-        <>
+        <div id="list-filter">
             <h2 id="list-heading">The NBA 75</h2>
             <div id="search">
                 {/* <p>Filter by TEAM / Search</p> */}
@@ -24,7 +24,7 @@ const ListFilter = ({players, handlePlayerSearch, handleTeamSearch}) => {
                     <input type="text" onChange={onTeamChange} />
                 </div>
             </div>
-        </>
+        </div>
     );
 
 }

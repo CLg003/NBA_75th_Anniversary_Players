@@ -84,7 +84,7 @@ const Nba75 = () => {
 
     const onPlayerClick = function(index) {
         const playerToSelect = filteredPlayers[index];
-        setSelectedPlayer(playerToSelect);
+        (playerToSelect === selectedPlayer ? setSelectedPlayer(null) : setSelectedPlayer(playerToSelect));
     }
 
     const onTeamClick = function() {

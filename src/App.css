@@ -1,11 +1,25 @@
+
+
+#surround {
+  background-color: #1D4289;
+  margin: 0;
+  padding: 0;
+}
+
 #nba-75 {
+  background-color: white;
   width: 80%;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 2px solid grey;
+  border: 2px solid #1D4289;
   border-radius: 50px;
   padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  font-size: 18px;
 }
 
 header {
@@ -14,26 +28,44 @@ header {
   align-items: center;
   padding-right: 100px;
   padding-bottom: 30px;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #1D4289;
 }
 
 h1 {
   text-align: center;
   margin-right: 100px;
   font-size: 120px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #C80F2E;
+  color: white;
+  padding: 40px 70px;
+  border-radius: 40px;
+  text-shadow: 3px 3px 3px black;
+  box-shadow: 1px 1px 2px black;
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+}
+
+h3 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
 }
 
 #introduction {
-  border-bottom: 2px solid grey;
+  /* border-bottom: 2px solid grey; */
   padding: 10px 20px;
-  margin-bottom: 30px;
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-#introduction > p {
-  /* width: 80%;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px; */
+#list-filter {
+  border-top: 2px solid #1D4289;;
 }
 
 #list-heading {
@@ -87,7 +119,7 @@ h1 {
 }
 
 .player-name > p:hover {
-  color: blue;
+  color: #1D4289;
   font-weight: bold;
 }
 
@@ -107,6 +139,11 @@ h1 {
   padding-top: 40px;
 }
 
+.player-image {
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px;
+}
+
 .player-team {
   display: flex;
   flex-direction: row;
@@ -119,11 +156,23 @@ h1 {
   vertical-align: sub;
 }
 
+.team {
+  /* text-align: center; */
+  /* width: 200px; */
+  /* margin: auto; */
+  /* margin-top: 10px; */
+  /* margin-bottom: 20px; */
+  padding: 5px;
+  background-color: white;
+  /* color: blue; */
+  /* font-weight: bold; */
+}
+
 /* .show-stats {
   text-align: center;
 } */
 
-.team, .show-stats, .hide-player-detail {
+.show-stats, .hide-player-detail {
   text-align: center;
   border: 1px solid grey;
   border-radius: 5px;
@@ -132,17 +181,17 @@ h1 {
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px;
-  background-color: white;
-  color: blue;
+  background-color: #C80F2E;
+  color: white;
   font-weight: bold;
+  font-size: larger;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 1px 1px 0px black;
+  box-shadow: 1px 1px 0px black;
 }
 
- /* {
-  
-} */
-
-.team:hover, .show-stats:hover, .hide-player-detail:hover {
-  background-color: blue;
+.show-stats:hover, .hide-player-detail:hover {
+  background-color: #1D4289;
   color: white;
   font-weight: bold;
 }
@@ -151,21 +200,31 @@ h1 {
   text-align: center;
 }
 
+.stats > h3 {
+  font-size: 20px;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
-  background-color: blue;
+  background-color: rgb(228, 226, 226);
+  /* box-shadow: 2px 2px 5px black; */
+  border-collapse: collapse;
 }
 
-table, th, td {
-  border: 1px solid black;
-  /* border-collapse: collapse; */
+th, td {
+  border: 1px solid grey;
 }
 
 th, td {
   padding: 10px;
   background-color: white;
+}
+
+th {
+  background-color: #1D4289;
+  color: white;
 }
 
 .th-games-played {
@@ -184,14 +243,14 @@ th, td {
 }
 
 a {
-  color: black;
+  color: #1D4289;
   font-weight: bold;
   text-decoration: none;
   margin-top: 20px;
 }
 
 a:hover {
-  color: blue;
+  color: #C80F2E;
   /* font-size: larger; */
 }
 

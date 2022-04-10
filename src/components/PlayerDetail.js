@@ -1,13 +1,12 @@
 import React from "react";
 import TeamDetail from "./TeamDetail";
 import StatsDetail from "./StatsDetail";
-import ATL from "../images/teams/ATL.png";
 import kareemAbdulJabbar from "../images/players/KareemAbdulJabbar.jpeg";
 import rayAllen from "../images/players/RayAllen.jpeg";
 import giannisAntetokounmpo from "../images/players/GiannisAntetokounmpo.jpeg";
 import nateArchibald from "../images/players/NateArchibald.jpeg";
 import charlesBarkley from "../images/players/CharlesBarkley.jpeg";
-import larryBird from "../images/playersLarryBird/.jpeg";
+import larryBird from "../images/players/LarryBird.jpeg";
 import kobeBryant from "../images/players/KobeBryant.jpeg";
 import stephenCurry from "../images/players/StephenCurry.jpeg";
 import kevinDurant from "../images/players/KevinDurant.jpeg";
@@ -81,7 +80,7 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
     return (
         <div className="player-focus">
             <div className="player-team">
-                <img src={playerImage} alt={altTag} />
+                <img className="player-image" src={playerImage} alt={altTag} height="400px" />
                 <div className="player-box">
                     <h3>{firstName} {lastName}</h3>
                     <p><strong>Team: </strong><span className="team" onClick={handleTeamClick}>{team}</span><span id="arrow">&#10148;</span></p>
