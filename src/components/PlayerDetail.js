@@ -1,43 +1,13 @@
 import React from "react";
 import TeamDetail from "./TeamDetail";
 import StatsDetail from "./StatsDetail";
-import kareemAbdulJabbar from "../images/players/KareemAbdulJabbar.jpeg";
-import rayAllen from "../images/players/RayAllen.jpeg";
-import giannisAntetokounmpo from "../images/players/GiannisAntetokounmpo.jpeg";
-import nateArchibald from "../images/players/NateArchibald.jpeg";
-import charlesBarkley from "../images/players/CharlesBarkley.jpeg";
-import larryBird from "../images/players/LarryBird.jpeg";
-import kobeBryant from "../images/players/KobeBryant.jpeg";
-import stephenCurry from "../images/players/StephenCurry.jpeg";
-import kevinDurant from "../images/players/KevinDurant.jpeg";
-import kevinGarnett from "../images/players/KevinGarnett.jpeg";
-import jamesHarden from "../images/players/JamesHarden.jpeg";
-import allenIverson from "../images/players/AllenIverson.jpeg";
-import leBronJames from "../images/players/LeBronJames.jpeg";
-import magicJohnson from "../images/players/MagicJohnson.jpeg";
-import michaelJordan from "../images/players/MichaelJordan.jpeg";
-import damianLillard from "../images/players/DamianLillard.jpeg";
-import reggieMiller from "../images/players/ReggieMiller.jpeg";
-import steveNash from "../images/players/SteveNash.jpeg";
-import dirkNowitzki from "../images/players/DirkNowitzki.jpeg";
-import hakeemOlajuwon from "../images/players/HakeemOlajuwon.jpeg";
-import shaquilleONeal from "../images/players/ShaquilleONeal.jpeg";
-import chrisPaul from "../images/players/ChrisPaul.jpeg";
-import scottiePippen from "../images/players/ScottiePippen.jpeg";
-import dennisRodman from "../images/players/DennisRodman.jpeg";
-import russellWestbrook from "../images/players/RussellWestbrook.jpeg";
+
 
 const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, weight, team, conference, division, teamLogo, onTeamClick, teamClick, onStatsClick, statsClick, onHideClick, hideClick, stats, selectedPlayer, players, index}) => {
 
-    const playerImagesAll = [
-        kareemAbdulJabbar, rayAllen, giannisAntetokounmpo, nateArchibald, charlesBarkley, larryBird, kobeBryant, stephenCurry, kevinDurant, kevinGarnett, jamesHarden, allenIverson, leBronJames, magicJohnson, michaelJordan, damianLillard, reggieMiller, steveNash, dirkNowitzki, hakeemOlajuwon, shaquilleONeal, chrisPaul, scottiePippen, dennisRodman, russellWestbrook
-    ];
+    const playerName = (firstName + lastName).replace(/[^a-zA-Z ]/g, "");
 
-    const playerName = firstName + lastName;
-
-    const playerImage = playerImagesAll.filter(image => {
-        return image.toLowerCase().includes(playerName.toLowerCase().replace(/[^a-zA-z ]/g, ""));
-    });
+    const playerImage = require(`../images/players/${playerName}.jpeg`);
 
     const statNodes = stats.map((stat, index) => {
         return (
@@ -93,9 +63,14 @@ const PlayerDetail = ({firstName, lastName, position, heightFeet, heightInches, 
                 </div>
                 { teamClick ? 
                 <TeamDetail team={team} conference={conference} division={division} teamLogo={teamLogo} /> : null }
+            </div>               
+                { statsClick && selectedPlayer === players[index] ? <>{statNodes}</> : null }
+            <div className="show-hide-buttons">
+                {/* { statsClick ?
+                <p className="show-stats" onClick={handleStatsClick}>Hide player stats</p> :
+                <p className="show-stats" onClick={handleStatsClick}>View player stats</p> } */}
+                <p className="hide-player-detail" onClick={handleHideClick}>Hide player details</p>
             </div>
-            { statsClick && selectedPlayer === players[index] ? <>{statNodes}</> : null }
-            <p className="hide-player-detail" onClick={handleHideClick}>Hide player details</p>
         </div>
     );
 

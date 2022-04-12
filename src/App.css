@@ -152,6 +152,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  flex-flow: wrap row;
 }
 
 #arrow {
@@ -159,6 +160,14 @@ h3 {
   padding-left: 10px;
   vertical-align: sub;
 }
+
+/* .show-hide-buttons {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
+  width: 50%;
+  margin: auto;
+} */
 
 .show-stats, .hide-player-detail {
   text-align: center;

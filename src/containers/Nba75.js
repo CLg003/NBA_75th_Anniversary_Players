@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Intro from '../components/Intro';
 import ListFilter from '../components/ListFilter';
 import PlayerList from '../components/PlayerList';
-// import PlayerDetail from '../components/PlayerDetail';
-import nbaLogo from '../images/nba_logo.png';
-import nba75Logo from '../images/nba_75_logo.jpeg';
 
 const Nba75 = () => {
 
@@ -103,9 +100,9 @@ const Nba75 = () => {
     return (
         <div id="nba-75">
             <header>
-                <img id="nba-75-logo" src={nba75Logo} alt="NBA 75 logo" height="250px"/>
+                <img id="nba-75-logo" src={require('../images/nba_75_logo.jpeg')} alt="NBA 75 logo" height="250px"/>
                 <h1>NBA 75</h1>
-                <img id="nba-logo" src={nbaLogo} alt="NBA logo" height="200px"/>
+                <img id="nba-logo" src={require('../images/nba_logo.png')} alt="NBA logo" height="200px"/>
             </header> 
             <Intro />
             <ListFilter players={filteredPlayers} handlePlayerSearch={handlePlayerSearch} handleTeamSearch={handleTeamSearch}/>
